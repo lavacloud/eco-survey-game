@@ -1,22 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Heart, Scale, Building, Bike, TreePine, Bell, AlertTriangle, FileCheck, HelpCircle, X, Check, Loader2 } from 'lucide-react';
 
-const Card = ({ className, children, ...props }) => {
-  return <div className={`bg-white rounded-lg shadow ${className || ''}`} {...props}>{children}</div>;
-};
-
-const CardContent = ({ className, children, ...props }) => {
-  return <div className={`p-6 ${className || ''}`} {...props}>{children}</div>;
-};
-
-const CardHeader = ({ className, children, ...props }) => {
-  return <div className={`p-6 pb-0 ${className || ''}`} {...props}>{children}</div>;
-};
-
-const CardTitle = ({ className, children, ...props }) => {
-  return <h3 className={`text-xl font-bold ${className || ''}`} {...props}>{children}</h3>;
-};
-
 // Supabase configuration
 const SUPABASE_URL = 'https://pwzysvhvelujwbbegncp.supabase.co';
 const SUPABASE_API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB3enlzdmh2ZWx1andiYmVnbmNwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzkwMjE5MTIsImV4cCI6MjA1NDU5NzkxMn0.WVaEPPK4oRDnzGcmjYbFNZYKNW7TOgA6W-R0kpirCcc';
@@ -326,8 +310,8 @@ const EcoSurvey = () => {
   if (!hasStarted) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-red-50 via-pink-50 to-red-50 p-4">
-        <Card className="max-w-md mx-auto my-8 bg-white">
-          <CardContent className="p-6">
+        <div className="max-w-md mx-auto my-8 bg-white rounded-lg shadow">
+          <div className="p-6">
             <div className="text-center">
               <Heart className="w-16 h-16 mx-auto text-pink-500" fill="currentColor" />
               <h2 className="text-2xl font-bold mb-4 text-pink-700">Welcome to the Environmental Survey! 💚</h2>
@@ -346,8 +330,8 @@ const EcoSurvey = () => {
                 Start Survey
               </button>
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     );
   }
@@ -356,8 +340,8 @@ const EcoSurvey = () => {
   if (currentIndex >= questions.length) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-red-50 via-pink-50 to-red-50 p-4">
-        <Card className="max-w-md mx-auto my-8 bg-white">
-          <CardContent className="p-6">
+        <div className="max-w-md mx-auto my-8 bg-white rounded-lg shadow">
+          <div className="p-6">
             <div className="text-center">
               <Heart className="w-16 h-16 mx-auto text-pink-500" fill="currentColor" />
               <h2 className="text-2xl font-bold mb-4 text-pink-700">Thank you, {userName}! 💖</h2>
@@ -396,8 +380,8 @@ const EcoSurvey = () => {
                 </div>
               )}
             </div>
-          </CardContent>
-        </Card>
+          </div>
+        </div>
       </div>
     );
   }
@@ -413,8 +397,8 @@ const EcoSurvey = () => {
         </div>
 
         {showTransition ? (
-          <Card className="bg-white">
-            <CardContent className="p-6">
+          <div className="bg-white rounded-lg shadow">
+            <div className="p-6">
               <div className="text-center">
                 <Heart className="w-16 h-16 mx-auto text-pink-500 mb-4" fill="currentColor" />
                 <h2 className="text-2xl font-bold mb-2 text-pink-700">
@@ -424,11 +408,11 @@ const EcoSurvey = () => {
                   {transitionMessages[currentTransition].subtext}
                 </p>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         ) : (
-          <Card className="bg-white">
-            <CardContent className="p-6">
+          <div className="bg-white rounded-lg shadow">
+            <div className="p-6">
               <div className="flex justify-center mb-6">
                 {currentQuestion.icon}
               </div>
@@ -452,8 +436,8 @@ const EcoSurvey = () => {
                   </button>
                 </div>
               )}
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         )}
       </div>
     </div>
@@ -461,6 +445,9 @@ const EcoSurvey = () => {
 };
 
 export default EcoSurvey;
-       
+  
+ 
+           
+
         
   
