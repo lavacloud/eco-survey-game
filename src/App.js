@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent } from "@/components/ui/card";
+import import { Card, CardContent } from "./components/ui/card";;
 import { Heart, Scale, Building, Bike, TreePine, Bell, AlertTriangle, FileCheck, HelpCircle, X, Check, Loader2 } from 'lucide-react';
 
 // Supabase configuration
