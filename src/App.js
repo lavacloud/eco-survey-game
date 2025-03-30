@@ -1,6 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Card, CardContent } from "./components/ui/card";;
 import { Heart, Scale, Building, Bike, TreePine, Bell, AlertTriangle, FileCheck, HelpCircle, X, Check, Loader2 } from 'lucide-react';
+
+const Card = ({ className, children, ...props }) => {
+  return <div className={`bg-white rounded-lg shadow ${className || ''}`} {...props}>{children}</div>;
+};
+
+const CardContent = ({ className, children, ...props }) => {
+  return <div className={`p-6 ${className || ''}`} {...props}>{children}</div>;
+};
+
+const CardHeader = ({ className, children, ...props }) => {
+  return <div className={`p-6 pb-0 ${className || ''}`} {...props}>{children}</div>;
+};
+
+const CardTitle = ({ className, children, ...props }) => {
+  return <h3 className={`text-xl font-bold ${className || ''}`} {...props}>{children}</h3>;
+};
 
 // Supabase configuration
 const SUPABASE_URL = 'https://pwzysvhvelujwbbegncp.supabase.co';
